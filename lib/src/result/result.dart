@@ -68,7 +68,7 @@ class Err<T, E> extends Result<T, E> {
   List<Object?> get props => [_value];
 
   @override
-  R match<R>({required R Function(T? p1) ok, required R Function(E? p1) err}) {
+  R match<R>({required R Function(T p1) ok, required R Function(E? p1) err}) {
     return err(super._error);
   }
 }

@@ -3,9 +3,9 @@ import 'package:ruqe/ruqe.dart';
 void main() {
   var trigger = triggerError();
 
-  var value = trigger.match(
+  var value = trigger.match<int?>(
     ok: (value) => value,
-    err: (e) => e,
+    err: (e) => 0,
   );
 
   print(value);
