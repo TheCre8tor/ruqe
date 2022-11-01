@@ -22,6 +22,8 @@ abstract class Result<T, E> extends Equatable {
 
   // Implementation for isMatch method.
 
+  R match<R>({required R Function(T?) ok, required R Function(E?) err});
+
   @override
   List<Object?> get props => [_value, _error];
 }
@@ -40,6 +42,11 @@ class Ok<T, E> extends Result<T, E> {
 
   @override
   Option<E> err() => None();
+
+  @override
+  R match<R>({required R Function(T? p1) ok, required R Function(E p1) err}) {
+    return ok(super._value);
+  }
 }
 
 class Err<T, E> extends Result<T, E> {
@@ -59,4 +66,9 @@ class Err<T, E> extends Result<T, E> {
 
   @override
   List<Object?> get props => [_value];
+
+  @override
+  R match<R>({required R Function(T? p1) ok, required R Function(E? p1) err}) {
+    return err(super._error);
+  }
 }
