@@ -7,6 +7,9 @@
 import 'package:equatable/equatable.dart';
 import 'package:ruqe/src/option/option.dart';
 
+typedef OkArm<R, T> = R Function(T);
+typedef ErrArm<R, E> = R Function(E);
+
 abstract class Result<T, E> extends Equatable {
   final T? _value;
   final E? _error;
@@ -22,7 +25,7 @@ abstract class Result<T, E> extends Equatable {
 
   // Implementation for isMatch method.
 
-  R match<R>({required R Function(T?) ok, required R Function(E?) err});
+  R match<R>({required OkArm<R, T?> ok, required ErrArm<R, E?> err});
 
   @override
   List<Object?> get props => [_value, _error];
@@ -44,7 +47,7 @@ class Ok<T, E> extends Result<T, E> {
   Option<E> err() => None();
 
   @override
-  R match<R>({required R Function(T? p1) ok, required R Function(E p1) err}) {
+  R match<R>({required OkArm<R, T?> ok, required ErrArm<R, E> err}) {
     return ok(super._value);
   }
 }
@@ -68,7 +71,7 @@ class Err<T, E> extends Result<T, E> {
   List<Object?> get props => [_value];
 
   @override
-  R match<R>({required R Function(T p1) ok, required R Function(E? p1) err}) {
+  R match<R>({required OkArm<R, T> ok, required ErrArm<R, E?> err}) {
     return err(super._error);
   }
 }
