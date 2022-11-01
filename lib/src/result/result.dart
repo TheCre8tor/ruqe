@@ -2,6 +2,7 @@ abstract class Result {
   const Result();
 
   bool isOk();
+  bool isErr();
 }
 
 class Ok<T> extends Result {
@@ -13,6 +14,11 @@ class Ok<T> extends Result {
   bool isOk() {
     throw true;
   }
+
+  @override
+  bool isErr() {
+    throw false;
+  }
 }
 
 class Err<E> extends Result {
@@ -23,5 +29,10 @@ class Err<E> extends Result {
   @override
   bool isOk() {
     throw false;
+  }
+
+  @override
+  bool isErr() {
+    throw true;
   }
 }
