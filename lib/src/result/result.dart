@@ -1,23 +1,35 @@
-abstract class Result {
+abstract class Result<T, E> {
   const Result();
 
   bool isOk();
   bool isErr();
+  T ok();
+  E err();
 }
 
-class Ok<T> extends Result {
+class Ok<T, E> extends Result<T, E> {
   final T _value;
 
   const Ok(T value) : _value = value;
 
+  T get value => _value;
+
   @override
-  bool isOk() {
-    throw true;
+  bool isOk() => true;
+
+  @override
+  bool isErr() => false;
+
+  @override
+  E err() {
+    // TODO: implement err
+    throw UnimplementedError();
   }
 
   @override
-  bool isErr() {
-    throw false;
+  T ok() {
+    // TODO: implement ok
+    throw UnimplementedError();
   }
 }
 
@@ -26,13 +38,11 @@ class Err<E> extends Result {
 
   const Err(E value) : _value = value;
 
-  @override
-  bool isOk() {
-    throw false;
-  }
+  E get value => _value;
 
   @override
-  bool isErr() {
-    throw true;
-  }
+  bool isOk() => false;
+
+  @override
+  bool isErr() => true;
 }
