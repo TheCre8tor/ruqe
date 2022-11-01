@@ -1,3 +1,7 @@
+//
+// Copyright (c) 2022 Alexander Nitiola
+//
+
 import 'package:equatable/equatable.dart';
 
 abstract class Option<T> extends Equatable {

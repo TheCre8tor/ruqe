@@ -1,3 +1,7 @@
+//
+// Copyright (c) 2022 Alexander Nitiola
+//
+
 import 'package:ruqe/src/option/option.dart';
 
 abstract class Result<T, E> {
