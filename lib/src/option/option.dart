@@ -9,9 +9,9 @@ abstract class Option<T> extends Equatable {
 }
 
 class Some<T> extends Option<T> {
-  final T _value;
+  final T? _value;
 
-  const Some(T value) : _value = value;
+  const Some(T? value) : _value = value;
 
   @override
   List<Object?> get props => [_value];

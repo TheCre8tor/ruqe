@@ -3,14 +3,14 @@ import 'package:ruqe/ruqe.dart';
 void main() {
   var trigger = triggerError();
 
-  print('awesome: ${trigger.err()}');
+  print(trigger.ok());
 }
 
 Result<int, String> triggerError() {
   try {
-    var value = int.parse("%65");
+    var value = int.parse("65");
     return Ok(value);
   } catch (err) {
-    return Err(err.toString());
+    return Err("Value is none");
   }
 }
