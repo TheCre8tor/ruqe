@@ -1,18 +1,18 @@
+import 'package:ruqe/src/option/option.dart';
+
 abstract class Result<T, E> {
   const Result();
 
   bool isOk();
   bool isErr();
-  T ok();
-  E err();
+  Option<T> ok();
+  Option<E> err();
 }
 
 class Ok<T, E> extends Result<T, E> {
   final T _value;
 
   const Ok(T value) : _value = value;
-
-  T get value => _value;
 
   @override
   bool isOk() => true;
@@ -21,28 +21,26 @@ class Ok<T, E> extends Result<T, E> {
   bool isErr() => false;
 
   @override
-  E err() {
-    // TODO: implement err
-    throw UnimplementedError();
-  }
+  Option<T> ok() => Some(_value);
 
   @override
-  T ok() {
-    // TODO: implement ok
-    throw UnimplementedError();
-  }
+  Option<E> err() => None();
 }
 
-class Err<E> extends Result {
+class Err<T, E> extends Result<T, E> {
   final E _value;
 
   const Err(E value) : _value = value;
-
-  E get value => _value;
 
   @override
   bool isOk() => false;
 
   @override
   bool isErr() => true;
+
+  @override
+  Option<T> ok() => None();
+
+  @override
+  Option<E> err() => Some(_value);
 }
