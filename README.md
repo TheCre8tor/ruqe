@@ -21,7 +21,7 @@ import 'package:ruqe/ruqe.dart';
 
 ### Basic usage
 
-To create a Result use
+We can use Result as shown below:
 
 ```dart
 
