@@ -1,5 +1,5 @@
 name: ruqe
-description: Ruqe brings the programming concepts found in Rust into Dart, such as the Result and Option, etc.
+description: Ruqe brings the convenient types and methods found in Rust into Dart, such as the Result, Option, pattern-matching, etc.
 version: 1.0.0
 homepage: https://github.com/thecre8tor/ruqe
 repository: https://github.com/thecre8tor/ruqe.git
