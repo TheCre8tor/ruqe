@@ -9,7 +9,6 @@ class Panic<Self> extends Equatable {
   @override
   String toString() {
     if (_message is None) {
-      _message.unwrap();
       return "[panics]: $Self() cannot be unwrapped.";
     }
 
