@@ -6,6 +6,7 @@
 
 import 'package:equatable/equatable.dart';
 import 'package:ruqe/src/option/option.dart';
+import 'package:ruqe/src/shared/core/panic.dart';
 
 typedef OkArm<R, T> = R Function(T);
 typedef ErrArm<R, E> = R Function(E);
@@ -22,6 +23,7 @@ abstract class Result<T, E> extends Equatable {
   bool isErr();
   Option<T> ok();
   Option<E> err();
+  T unwrap();
 
   // Implementation for isMatch method.
 
@@ -50,6 +52,11 @@ class Ok<T, E> extends Result<T, E> {
   R match<R>({required OkArm<R, T?> ok, required ErrArm<R, E> err}) {
     return ok(super._value);
   }
+
+  @override
+  T unwrap() {
+    return super._value!;
+  }
 }
 
 class Err<T, E> extends Result<T, E> {
@@ -73,5 +80,10 @@ class Err<T, E> extends Result<T, E> {
   @override
   R match<R>({required OkArm<R, T> ok, required ErrArm<R, E?> err}) {
     return err(super._error);
+  }
+
+  @override
+  T unwrap() {
+    throw Panic<Result<T, E>>(None());
   }
 }
