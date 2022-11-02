@@ -15,7 +15,7 @@ void main() {
 
 Result<int, String> triggerError() {
   try {
-    var value = int.parse("%65");
+    var value = int.parse("65");
     return Ok(value);
   } catch (err) {
     return Err("Value is none");
