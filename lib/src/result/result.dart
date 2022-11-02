@@ -84,6 +84,6 @@ class Err<T, E> extends Result<T, E> {
 
   @override
   T unwrap() {
-    throw Panic<Result<T, E>>(None());
+    throw Panic<Result<T, E>>(Some("panic with `${super._error}`"));
   }
 }
