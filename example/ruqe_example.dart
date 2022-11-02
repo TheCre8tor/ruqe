@@ -3,19 +3,17 @@ import 'package:ruqe/ruqe.dart';
 void main() {
   var trigger = triggerError();
 
-  var rd = trigger.match<int?>(
+  var result = trigger.match<int?>(
     ok: (value) => value,
-    err: (_) {
-      return;
-    },
+    err: (_) => 0,
   );
 
-  print(rd);
+  print(result);
 }
 
 Result<int, String> triggerError() {
   try {
-    var value = int.parse("65");
+    var value = int.parse("%65");
     return Ok(value);
   } catch (err) {
     return Err("Value is none");

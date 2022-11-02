@@ -19,16 +19,29 @@ import with
 import 'package:ruqe/ruqe.dart';
 ```
 
-## Usage
+### Basic usage
 
 To create a Result use
 
 ```dart
-Ok<T, E>(value)
-```
 
-or
+void main() {
+  var trigger = triggerError();
 
-```dart
-Err<T, E>(failure)
+  var result = trigger.match<int?>(
+    ok: (value) => value,
+    err: (_) => 0,
+  );
+
+  print(result);
+}
+
+Result<int, String> triggerError() {
+  try {
+    var value = int.parse("%65");
+    return Ok(value);
+  } catch (err) {
+    return Err("Value is none");
+  }
+}
 ```
