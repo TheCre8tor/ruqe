@@ -25,8 +25,6 @@ abstract class Result<T, E> extends Equatable {
   Option<E> err();
   T unwrap();
 
-  // Implementation for isMatch method.
-
   R match<R>({required OkArm<R, T?> ok, required ErrArm<R, E?> err});
 
   @override
