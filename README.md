@@ -23,11 +23,11 @@ import 'package:ruqe/ruqe.dart';
 
 ### #[ Recoverable and Unrecoverable Errors ]
 
-In **`Ruqe`**, there is a clear distinction between recoverable and unrecoverable errors.
+In **Ruqe**, there is a clear distinction between recoverable and unrecoverable errors.
 
 ### 1. Recoverable errors:
 
-Recoverable errors do not cause a program to terminate completely. **`Ruqe`** makes unrecoverable error recoverable by matching the returned value of type `Result` and `Option` with the `.match<T>` convenient method.
+Recoverable errors do not cause a program to terminate completely. **Ruqe** makes unrecoverable error recoverable by matching the returned value of type `Result` and `Option` with the `.match<T>` convenient method.
 
 ```dart
 
