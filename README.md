@@ -59,4 +59,10 @@ Result<int, String> stringToNum(String str) {
 
 ### 2. Unrecoverable errors:
 
-Unrecoverable errors cause a program to terminate immediately.
+Unrecoverable errors cause a program to terminate immediately. In **Ruqe**, [Panic] terminates the program when it comes across with an unrecoverable error.
+
+`What can trigger a panic?`
+
+```dart
+
+```

@@ -5,8 +5,9 @@ void main() {
   /// data will trigger an exception.
   var trigger = stringToNum("%65");
 
-  /// With pattern matching, we were able to recover from
-  /// exception thrown by int.parse and return 0 instead.
+  /// With pattern matching, we were able to recover from the
+  /// exception thrown from calling [int.parse()] and return
+  /// 0 instead.
   var result = trigger.match<int?>(
     ok: (value) => value,
     err: (_) => 0,
