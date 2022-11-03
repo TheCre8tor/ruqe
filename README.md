@@ -21,11 +21,11 @@ import 'package:ruqe/ruqe.dart';
 
 ## Basic usage
 
-### #[ `Recoverable and Unrecoverable Errors` ]
+### #[ Recoverable and Unrecoverable Errors ]
 
 In **`Ruqe`**, there is a clear distinction between recoverable and unrecoverable errors.
 
-### `1. Recoverable errors:`
+### 1. Recoverable errors:
 
 Recoverable errors do not cause a program to terminate completely. **`Ruqe`** makes unrecoverable error recoverable by matching the returned value of type `Result` and `Option` with the `.match<T>` convenient method.
 
@@ -57,6 +57,6 @@ Result<int, String> stringToNum(String str) {
 }
 ```
 
-### `2. Unrecoverable errors:`
+### 2. Unrecoverable errors:
 
 Unrecoverable errors cause a program to terminate immediately.
