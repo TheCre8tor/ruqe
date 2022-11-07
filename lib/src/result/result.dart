@@ -8,7 +8,14 @@ import 'package:equatable/equatable.dart';
 import 'package:ruqe/src/option/option.dart';
 import 'package:ruqe/src/shared/core/panic.dart';
 
+/// {@template ruqe.OkArm}
+/// The [OkArm] represents the Ok callback function
+/// {@endtemplate}
 typedef OkArm<R, T> = R Function(T);
+
+/// {@template ruqe.ErrArm}
+/// The [ErrArm] represents the Err callback function
+/// {@endtemplate}
 typedef ErrArm<R, E> = R Function(E);
 
 abstract class Result<T, E> extends Equatable {
