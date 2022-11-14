@@ -18,6 +18,9 @@ typedef OkArm<R, T> = R Function(T);
 /// {@endtemplate}
 typedef ErrArm<R, E> = R Function(E);
 
+/// [Result] is the type used for returning and propagating errors.
+/// It is an enum with the variants, Ok(T), representing success and containing a value,
+/// and Err(E), representing error and containing an error value.
 abstract class Result<T, E> extends Equatable {
   final T? _value;
   final E? _error;
