@@ -1,6 +1,6 @@
-//
+// ************************************
 // Copyright (c) 2022 Alexander Nitiola
-//
+// ************************************
 
 import 'package:equatable/equatable.dart';
 import 'package:ruqe/src/shared/core/panic.dart';

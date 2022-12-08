@@ -8,14 +8,10 @@ import 'package:equatable/equatable.dart';
 import 'package:ruqe/src/option/option.dart';
 import 'package:ruqe/src/shared/core/panic.dart';
 
-/// {@template ruqe.OkArm}
 /// The [OkArm] represents the Ok callback function
-/// {@endtemplate}
 typedef OkArm<R, T> = R Function(T);
 
-/// {@template ruqe.ErrArm}
 /// The [ErrArm] represents the Err callback function
-/// {@endtemplate}
 typedef ErrArm<R, E> = R Function(E);
 
 /// [Result] is the type used for returning and propagating errors.
@@ -29,10 +25,34 @@ abstract class Result<T, E> extends Equatable {
       : _value = ok,
         _error = error;
 
+  /// Returns `true` if the result is `Ok`.
+  /// ```dart
+  /// final Result<int, String> x = Ok(21);
+  /// assert(x.isOk() == true);
+  ///
+  /// final Result<int, String> x = Err("an error occured.");
+  /// assert(x.isOk() == false);
+  /// ```
+  /// run: dart --enable-asserts example/ruqe_example.dart
   bool isOk();
+
+  /// Returns `false` if the result is `Err`.
+  /// ```dart
+  /// final Result<int, String> x = Ok(21);
+  /// assert(x.isErr() == false);
+  ///
+  /// final Result<int, String> x = Err("an error occured.");
+  /// assert(x.isErr() == true);
+  /// ```
+  /// run: dart --enable-asserts example/ruqe_example.dart
   bool isErr();
+
+  /// Converts from `Result<T, E>` to `Option<T>`.
   Option<T> ok();
+
+  /// Converts from `Result<T, E>` to `Option<E>`.
   Option<E> err();
+
   T unwrap();
 
   R match<R>({required OkArm<R, T?> ok, required ErrArm<R, E?> err});
