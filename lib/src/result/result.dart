@@ -27,24 +27,32 @@ abstract class Result<T, E> extends Equatable {
 
   /// Returns `true` if the result is `Ok`.
   /// ```dart
+  /// // Examples
+  /// // Basic usage:
+  ///
   /// final Result<int, String> x = Ok(21);
   /// assert(x.isOk() == true);
   ///
   /// final Result<int, String> x = Err("an error occured.");
   /// assert(x.isOk() == false);
+  ///
+  /// // run: dart --enable-asserts example/ruqe_example.dart
   /// ```
-  /// run: dart --enable-asserts example/ruqe_example.dart
   bool isOk();
 
   /// Returns `false` if the result is `Err`.
   /// ```dart
+  /// // Examples
+  /// // Basic usage:
+  ///
   /// final Result<int, String> x = Ok(21);
   /// assert(x.isErr() == false);
   ///
   /// final Result<int, String> x = Err("an error occured.");
   /// assert(x.isErr() == true);
+  ///
+  /// // run: dart --enable-asserts example/ruqe_example.dart
   /// ```
-  /// run: dart --enable-asserts example/ruqe_example.dart
   bool isErr();
 
   /// Converts from `Result<T, E>` to `Option<T>`.
