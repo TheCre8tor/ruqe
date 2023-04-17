@@ -2,8 +2,8 @@
 // Copyright (c) 2022 Alexander Nitiola
 // ************************************
 
-import 'package:equatable/equatable.dart';
-import 'package:ruqe/src/shared/core/panic.dart';
+
+part of "package:ruqe/ruqe.dart";
 
 abstract class Option<T> extends Equatable {
   final T? _value;

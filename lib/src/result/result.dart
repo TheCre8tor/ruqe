@@ -4,9 +4,7 @@
 // Functions return Result whenever errors are expected and recoverable.
 //
 
-import 'package:equatable/equatable.dart';
-import 'package:ruqe/src/option/option.dart';
-import 'package:ruqe/src/shared/core/panic.dart';
+part of "package:ruqe/ruqe.dart";
 
 /// The [OkArm] represents the Ok callback function
 typedef OkArm<R, T> = R Function(T);

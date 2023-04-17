@@ -1,3 +1,7 @@
+## [1.1.2] - 2023-04-17
+
+- Added `option` and the `result` module directly to the ruqe library
+
 ## [1.1.1] - 2022-12-08
 
 - Added some documentation for the Result isOk method.
