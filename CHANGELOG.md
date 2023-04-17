@@ -1,3 +1,7 @@
+## [1.1.3] - 2023-04-17
+
+- Added Either functional programming concept
+
 ## [1.1.2] - 2023-04-17
 
 - Added `option` and the `result` module directly to the ruqe library
