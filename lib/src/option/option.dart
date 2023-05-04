@@ -28,13 +28,13 @@ class Some<T> extends Option<T> {
 class None<T> extends Option<T> {
   const None();
 
-  /// Note: In the original Rust implementation of the unwrap API,
-  /// When unwrap() is called on a result of a None value, the application
-  /// panic's. The same use-case can't be applied to Dart/Flutter application
-  /// because it mess up the UI.
+  /// Note: In the original Rust implementation of the Option<T> unwrap API,
+  /// if unwrap() is called on a result of None value, the application
+  /// panic's but the same logic doesn't work well with Flutter application's
+  /// because it messes up the UI.
   ///
-  /// Solution: When unwrap is called on a result of a None value, None<void> is
-  /// returned instead of throwing an exception of Panic<None<T>>
+  /// The new implementation for Flutter application returns None<void> instead
+  /// of throwing an exception of Panic<None<T>>.
   ///
   /// @override
   /// T unwrap() {
