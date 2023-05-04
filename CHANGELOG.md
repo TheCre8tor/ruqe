@@ -1,3 +1,7 @@
+## [1.1.4] - 2023-05-04
+
+- Changed Option<T> = None return type to None<void> instead of panicking.
+
 ## [1.1.3] - 2023-04-17
 
 - Added Either functional programming concept
