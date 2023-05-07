@@ -22,6 +22,10 @@ abstract class Either<L, R> {
 
   bool isRight() => fold((_) => false, (_) => true);
 
+  L? get getLeft => fold((L left) => left, (r) => null);
+
+  R? get getRight => fold((L lefts) => null, (R right) => right);
+
   Either<R, L> swap() => fold(right, left);
 
   Either<L, R2> map<R2>(R2 Function(R r) f) => fold(left, (R r) => right(f(r)));
