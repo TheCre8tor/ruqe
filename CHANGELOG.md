@@ -1,3 +1,8 @@
+## [1.2.0] - 2023-05-07
+
+- Added convenient APIs to get Left and Right enclosing data
+- Implement exception for panic class
+
 ## [1.1.4] - 2023-05-04
 
 - Changed Option<T> = None return type to None<void> instead of panicking.

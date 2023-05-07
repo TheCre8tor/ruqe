@@ -1,4 +1,5 @@
 import 'package:ruqe/ruqe.dart';
+import 'package:ruqe/src/shared/core/panic.dart';
 
 void main() {
   /// Calling [stringToNum] with an alphanumeric

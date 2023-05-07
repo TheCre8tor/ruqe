@@ -13,7 +13,7 @@ import 'package:ruqe/ruqe.dart';
 /// throw Panic<Option<T>>(None());
 /// ```
 /// {@endtemplate}
-class Panic<Self> extends Equatable {
+class Panic<Self> extends Equatable implements Exception {
   final Option<String> _message;
 
   const Panic(Option<String> message) : _message = message;
