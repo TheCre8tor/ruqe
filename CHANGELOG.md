@@ -1,4 +1,4 @@
-## [1.3.2] - 2023-09-06
+## [1.3.0] - 2023-09-06
 
 - Added `match` method on Option type. 
   This new `match` method allows developers to perform pattern matching operations on
