@@ -33,6 +33,13 @@ class Some<T> extends Option<T> {
 
   @override
   R match<R>({required SomeArm<R, T?> ok, required NoneArm<R> err}) {
+    final okArm = ok(_value);
+    final errArm = err();
+
+    if (okArm.runtimeType != errArm.runtimeType) {
+      throw ArgumentError("Return types from the ok arm and error arm must be the same \n [issue]: ${okArm.runtimeType} is not the same as ${errArm.runtimeType}");
+    }
+
     return ok(_value);
   }
 }
@@ -64,6 +71,13 @@ class None<T> extends Option<T> {
 
   @override
   R match<R>({required SomeArm<R, T?> ok, required NoneArm<R> err}) {
+    final okArm = ok(null);
+    final errArm = err();
+
+    if (okArm.runtimeType != errArm.runtimeType) {
+      throw ArgumentError("The return type from ok arm must be the same as the return type from the error arm \n [issue]: ${okArm.runtimeType} is not the same as ${errArm.runtimeType}");
+    }
+
     return err();
   }
 }
