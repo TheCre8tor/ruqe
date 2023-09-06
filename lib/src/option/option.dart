@@ -2,8 +2,13 @@
 // Copyright (c) 2022 Alexander Nitiola
 // ************************************
 
-
 part of "package:ruqe/ruqe.dart";
+
+/// The [SomeArm] represents the Some callback function
+typedef SomeArm<R, T> = R Function(T);
+
+/// The [NoneArm] represents the None callback function
+typedef NoneArm<R> = R Function();
 
 abstract class Option<T> extends Equatable {
   final T? _value;
@@ -11,6 +16,8 @@ abstract class Option<T> extends Equatable {
   const Option([T? value]) : _value = value;
 
   T unwrap();
+
+  R match<R>({required SomeArm<R, T?> ok, required NoneArm<R> err});
 }
 
 class Some<T> extends Option<T> {
@@ -23,6 +30,11 @@ class Some<T> extends Option<T> {
 
   @override
   List<Object?> get props => [_value];
+
+  @override
+  R match<R>({required SomeArm<R, T?> ok, required NoneArm<R> err}) {
+    return ok(_value);
+  }
 }
 
 class None<T> extends Option<T> {
@@ -49,4 +61,9 @@ class None<T> extends Option<T> {
 
   @override
   List<Object?> get props => [];
+
+  @override
+  R match<R>({required SomeArm<R, T?> ok, required NoneArm<R> err}) {
+    return err();
+  }
 }

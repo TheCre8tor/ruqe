@@ -1,3 +1,7 @@
+## [1.2.1] - 2023-05-07
+
+- Formatted all files using dart formatter
+
 ## [1.2.0] - 2023-05-07
 
 - Added convenient APIs to get Left and Right enclosing data
