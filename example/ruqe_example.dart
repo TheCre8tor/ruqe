@@ -1,5 +1,4 @@
 import 'package:ruqe/ruqe.dart';
-import 'package:ruqe/src/shared/core/panic.dart';
 
 void main() {
   /// Calling [stringToNum] with an alphanumeric
@@ -15,6 +14,16 @@ void main() {
   );
 
   print("Result: $result"); // Result: 0
+
+  /// Optional pattern matching
+  final Option<String> asData = None();
+
+  final data = asData.match(
+      ok: (value) => value,
+      err: () => null
+  );
+
+  print("Match Result: $data");
 }
 
 Result<int, String> stringToNum(String str) {

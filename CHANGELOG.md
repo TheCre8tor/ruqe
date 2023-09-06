@@ -1,3 +1,9 @@
+## [1.3.2] - 2023-09-06
+
+- Added `match` method on Option type. 
+  This new `match` method allows developers to perform pattern matching operations on
+  Option instances, simplifying conditional logic and enhancing code readability.
+
 ## [1.2.1] - 2023-05-07
 
 - Formatted all files using dart formatter

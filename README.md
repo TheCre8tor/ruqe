@@ -10,7 +10,7 @@ In your Dart/Flutter project, add the dependency to your `pubspec.yaml`
 
 ```yaml
 dependencies:
-  ruqe: ^1.2.1
+  ruqe: ^1.3.2
 ```
 
 import with
@@ -87,7 +87,23 @@ Result<List<String?>, AppError> getFirstName(ListMap data) {
   if (data.isNotEmpty) {
     return Ok(data.map((user) => user["first_name"]).toList());
   } else {
-    return Err("[error]: an error occured!");
+    return Err("[error]: an error occurred!");
   }
 }
+```
+
+### 3. Option instance pattern matching: 
+
+This `match` method allows developers to perform pattern matching operations on
+Option instances, simplifying conditional logic and enhancing code readability.
+
+```dart
+final Option<String> asData = None();
+
+final data = asData.match(
+    ok: (value) => value,
+    err: () => null
+);
+
+print(data);
 ```
