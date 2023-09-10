@@ -53,7 +53,9 @@ We will begin by firstly defining our data models:
     abstract interface class IAuthService {
         Future<User> getUser(String userId);
     }
+```
 
+```dart
     class AuthService implements IAuthService {
         final Client client;
 
@@ -77,7 +79,9 @@ We will begin by firstly defining our data models:
     abstract interface class IAuthRepository {
         Future<Result<User, String>> getUser(String userId);
     }
+```
 
+```dart
     class AuthRepository implements IAuthRepository {
         final IAuthService service;
 
