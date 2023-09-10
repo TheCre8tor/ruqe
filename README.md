@@ -1,8 +1,21 @@
 # ruqe
 
-**Ruqe** brings the convenient types and methods found in Rust into Dart, such as
-the `Result`, `Option`, `pattern-matching`, etc. Additionally, the library provides
-an excellent concept for `modeling errors without resorting to exceptions`.
+**Ruqe** brings the **Result-Oriented Programming** paradigm to Flutter and Dart programs, with its main 
+purpose being to simplify development processes. It helps you create predictable responses from your functions 
+or method operations.
+
+## What is Result Oriented Programming?
+**Result-Oriented programming** is a paradigm that enables you to take a results-focused approach 
+to your app's architecture and design, giving you control over your application development processes 
+and expected results.
+
+**Ruqe** provides convenient types and methods such as the `Result`, `Option`, `Either`, `Pattern Matching`, etc. 
+Additionally, the library provides an excellent `techniques for handling errors gracefully without resorting 
+to exceptions`.
+
+Dive into **Result-Oriented Programming** with **Ruqe**, ensuring your app remains `responsive and reliable`.
+
+**Note:** `The size of the library is 22KB. It's light weight, isn't it?`
 
 ## Getting started
 
@@ -10,7 +23,7 @@ In your Dart/Flutter project, add the dependency to your `pubspec.yaml`
 
 ```yaml
 dependencies:
-  ruqe: ^1.3.0
+  ruqe: ^1.3.2
 ```
 
 import with
