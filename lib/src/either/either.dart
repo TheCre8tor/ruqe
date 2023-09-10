@@ -37,14 +37,19 @@ abstract class Either<L, R> {
 
   Either<L, R2> map<R2>(R2 Function(R r) func) =>
       fold((L ifLeft) => Left(ifLeft), (R r) => Right(func(r)));
+
   Either<L, R2> bind<R2>(Function1<R, Either<L, R2>> f) =>
       fold((L ifLeft) => Left(ifLeft), f);
+
   Either<L, R2> flatMap<R2>(Function1<R, Either<L, R2>> f) =>
       fold((L ifLeft) => Left(ifLeft), f);
+
   Either<L, R2> andThen<R2>(Either<L, R2> next) =>
       fold((L ifLeft) => Left(ifLeft), (_) => next);
+
   Either<L, R> filter(bool Function(R r) predicate, L Function() fallback) =>
       fold((_) => this, (r) => predicate(r) ? this : Left(fallback()));
+
   Either<L, R> where(bool Function(R r) predicate, L Function() fallback) =>
       filter(predicate, fallback);
 
@@ -54,6 +59,7 @@ abstract class Either<L, R> {
   Either<L, B> mapWithIndex<B>(B Function(int i, R r) f) => map((r) => f(0, r));
 
   bool all(bool Function(R r) f) => map(f) | true;
+
   bool every(bool Function(R r) f) => all(f);
 
   bool any(bool Function(R r) f) => map(f) | false;
@@ -77,24 +83,34 @@ abstract class Either<L, R> {
 
 class Left<L, R> extends Either<L, R> {
   const Left(this._l);
+
   final L _l;
+
   L get value => _l;
+
   @override
   B fold<B>(B Function(L l) ifLeft, B Function(R r) ifRight) => ifLeft(_l);
+
   @override
   bool operator ==(other) => other is Left && other._l == _l;
+
   @override
   int get hashCode => _l.hashCode;
 }
 
 class Right<L, R> extends Either<L, R> {
   const Right(this._right);
+
   final R _right;
+
   R get value => _right;
+
   @override
   B fold<B>(B Function(L l) ifLeft, B Function(R r) ifRight) => ifRight(_right);
+
   @override
   bool operator ==(other) => other is Right && other._right == _right;
+
   @override
   int get hashCode => _right.hashCode;
 }
