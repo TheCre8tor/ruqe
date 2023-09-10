@@ -1,3 +1,6 @@
+## [1.3.3] - 2023-09-10
+- Updated the library metadata
+
 ## [1.3.2] - 2023-09-10
 - Updated the library description
 
