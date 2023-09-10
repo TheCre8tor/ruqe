@@ -12,11 +12,11 @@ abstract class Either<L, R> {
 
   L get left => fold(
       (left) => left,
-      (right) => throw Panic(
+      (right) => throw Panic<Option<String>>(
           Some('[ILLEGAL USE]: check isLeft is true before calling')));
 
   R get right => fold(
-      (left) => throw Panic(
+      (left) => throw Panic<Option<String>>(
           Some('[ILLEGAL USE]: check isRight is true before calling')),
       (right) => right);
 

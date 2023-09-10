@@ -88,7 +88,8 @@ class Ok<T, E> extends Result<T, E> {
     final errArm = err(_error);
 
     if (okArm.runtimeType != errArm.runtimeType) {
-      throw ArgumentError("Return types from the [ok] and [err] arm must be the same \n [issue]: ${okArm.runtimeType} is not the same as ${errArm.runtimeType}");
+      throw ArgumentError(
+          "Return types from the [ok] and [err] arm must be the same \n [issue]: ${okArm.runtimeType} is not the same as ${errArm.runtimeType}");
     }
 
     return ok(super._value);
@@ -124,7 +125,8 @@ class Err<T, E> extends Result<T, E> {
     final errArm = err(_error);
 
     if (okArm.runtimeType != errArm.runtimeType) {
-      throw ArgumentError("Return types from the [ok] and [err] arm must be the same \n [issue]: ${okArm.runtimeType} is not the same as ${errArm.runtimeType}");
+      throw ArgumentError(
+          "Return types from the [ok] and [err] arm must be the same \n [issue]: ${okArm.runtimeType} is not the same as ${errArm.runtimeType}");
     }
 
     return err(super._error);
@@ -132,6 +134,6 @@ class Err<T, E> extends Result<T, E> {
 
   @override
   T unwrap() {
-    throw Panic<Result<T, E>>(Some("panic with `${super._error}`"));
+    throw Panic<Option<String>>(Some("panic with `${super._error}`"));
   }
 }

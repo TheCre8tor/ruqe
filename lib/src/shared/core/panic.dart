@@ -13,7 +13,7 @@ import 'package:ruqe/ruqe.dart';
 /// throw Panic<Option<T>>(None());
 /// ```
 /// {@endtemplate}
-class Panic extends Equatable implements Exception {
+class Panic<Self> extends Equatable implements Exception {
   final Option<String> _message;
 
   const Panic(Option<String> message) : _message = message;
@@ -21,7 +21,7 @@ class Panic extends Equatable implements Exception {
   @override
   String toString() {
     if (_message is None) {
-      return "[panics]: ${_message.runtimeType} cannot be unwrapped.";
+      return "[panics]: $Self() cannot be unwrapped.";
     }
 
     return _message.unwrap();

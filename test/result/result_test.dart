@@ -36,7 +36,7 @@ void main() {
     });
 
     test("should panic if unwrap is called on Err type", () {
-      expect(error.unwrap, throwsA(isA<Panic>()));
+      expect(error.unwrap, throwsA(isA<Panic<Option<String>>>()));
     });
   });
 }
