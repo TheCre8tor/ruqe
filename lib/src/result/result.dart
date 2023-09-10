@@ -83,7 +83,14 @@ class Ok<T, E> extends Result<T, E> {
   Option<E> err() => None();
 
   @override
-  R match<R>({required OkArm<R, T?> ok, required ErrArm<R, E> err}) {
+  R match<R>({required OkArm<R, T?> ok, required ErrArm<R, E?> err}) {
+    final okArm = ok(_value);
+    final errArm = err(_error);
+
+    if (okArm.runtimeType != errArm.runtimeType) {
+      throw ArgumentError("Return types from the [ok] and [err] arm must be the same \n [issue]: ${okArm.runtimeType} is not the same as ${errArm.runtimeType}");
+    }
+
     return ok(super._value);
   }
 
@@ -112,7 +119,14 @@ class Err<T, E> extends Result<T, E> {
   List<Object?> get props => [_value];
 
   @override
-  R match<R>({required OkArm<R, T> ok, required ErrArm<R, E?> err}) {
+  R match<R>({required OkArm<R, T?> ok, required ErrArm<R, E?> err}) {
+    final okArm = ok(_value);
+    final errArm = err(_error);
+
+    if (okArm.runtimeType != errArm.runtimeType) {
+      throw ArgumentError("Return types from the [ok] and [err] arm must be the same \n [issue]: ${okArm.runtimeType} is not the same as ${errArm.runtimeType}");
+    }
+
     return err(super._error);
   }
 

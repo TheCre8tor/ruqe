@@ -1,5 +1,7 @@
 library ruqe;
 
+import 'dart:math';
+
 import 'package:equatable/equatable.dart';
 import 'package:ruqe/src/shared/core/panic.dart';
 
