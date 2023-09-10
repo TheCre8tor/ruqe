@@ -37,7 +37,8 @@ class Some<T> extends Option<T> {
     final noneArm = none();
 
     if (someArm.runtimeType != noneArm.runtimeType) {
-      throw ArgumentError("Return types from the [some] and [none] arm must be the same \n [issue]: ${someArm.runtimeType} is not the same as ${noneArm.runtimeType}");
+      throw ArgumentError(
+          "Return types from the [some] and [none] arm must be the same \n [issue]: ${someArm.runtimeType} is not the same as ${noneArm.runtimeType}");
     }
 
     return some(_value);
@@ -75,7 +76,8 @@ class None<T> extends Option<T> {
     final noneArm = none();
 
     if (someArm.runtimeType != noneArm.runtimeType) {
-      throw ArgumentError("Return types from the [some] and [none] arm must be the same \n [issue]: ${someArm.runtimeType} is not the same as ${noneArm.runtimeType}");
+      throw ArgumentError(
+          "Return types from the [some] and [none] arm must be the same \n [issue]: ${someArm.runtimeType} is not the same as ${noneArm.runtimeType}");
     }
 
     return none();
