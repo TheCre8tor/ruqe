@@ -49,6 +49,7 @@ We will begin by firstly defining our data models:
     }
 ```
 
+#### Service layer:
 ```dart
     abstract interface class IAuthService {
         Future<User> getUser(String userId);
@@ -75,6 +76,7 @@ We will begin by firstly defining our data models:
     }
 ```
 
+#### Repository Layer:
 ```dart
     abstract interface class IAuthRepository {
         Future<Result<User, String>> getUser(String userId);
@@ -99,6 +101,7 @@ We will begin by firstly defining our data models:
     }
 ```
 
+#### View Layer:
 ```dart
     class Contact extends StatefulWidget {
         const Contact({super.key});
