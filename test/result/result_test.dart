@@ -1,5 +1,4 @@
 import 'package:ruqe/ruqe.dart';
-import 'package:ruqe/src/shared/core/panic.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -36,7 +35,7 @@ void main() {
     });
 
     test("should panic if unwrap is called on Err type", () {
-      expect(error.unwrap, throwsA(isA<Panic<Option<String>>>()));
+      expect(error.unwrap, throwsA(isA<Panic>()));
     });
   });
 }

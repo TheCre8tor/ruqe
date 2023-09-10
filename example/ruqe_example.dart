@@ -18,10 +18,7 @@ void main() {
   /// Optional pattern matching
   final Option<String> asData = None();
 
-  final data = asData.match(
-      some: (value) => value,
-      none: () => null
-  );
+  final data = asData.match(some: (value) => value, none: () => "null");
 
   print("Match Result: $data");
 }
