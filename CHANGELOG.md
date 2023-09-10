@@ -1,6 +1,7 @@
-## [1.4.0] - 2023-09-10
+## [1.3.4] - 2023-09-10
 
-- Introduced the panic API
+- Added the panic API
+- Improved the documentation
 
 ## [1.3.3] - 2023-09-10
 
