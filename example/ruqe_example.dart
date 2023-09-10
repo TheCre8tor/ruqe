@@ -19,8 +19,8 @@ void main() {
   final Option<String> asData = None();
 
   final data = asData.match(
-      ok: (value) => value,
-      err: () => null
+      some: (value) => value,
+      none: () => null
   );
 
   print("Match Result: $data");
