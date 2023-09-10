@@ -1,15 +1,22 @@
+## [1.4.0] - 2023-09-10
+
+- Introduced the panic API
+
 ## [1.3.3] - 2023-09-10
+
 - Updated the library metadata
 
 ## [1.3.2] - 2023-09-10
+
 - Updated the library description
 
 ## [1.3.1] - 2023-09-10
+
 - Updated the library description
 
 ## [1.3.0] - 2023-09-06
 
-- Added `match` method on Option type. 
+- Added `match` method on Option type.
   This new `match` method allows developers to perform pattern matching operations on
   Option instances, simplifying conditional logic and enhancing code readability.
 

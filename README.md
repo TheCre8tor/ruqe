@@ -1,21 +1,23 @@
 # ruqe
 
-**Ruqe** brings the **Result-Oriented Programming** paradigm to Flutter and Dart programs, with its main 
-purpose being to simplify development processes. It helps you create predictable responses from your functions 
-or method operations.
+**Ruqe** brings the **Result-Oriented Programming** paradigm 🔥 to Flutter and Dart 🎯 programs,
+with its main purpose being to simplify development processes. It helps you create predictable
+responses from your functions or method operations 🎉.
 
 ## What is Result Oriented Programming?
-**Result-Oriented programming** is a paradigm that enables you to take a results-focused approach 
-to your app's architecture and design, giving you control over your application development processes 
-and expected results.
 
-**Ruqe** provides convenient types and methods such as the `Result`, `Option`, `Either`, `Pattern Matching`, etc. 
-Additionally, the library provides an excellent `techniques for handling errors gracefully without resorting 
-to exceptions`.
+**Result-Oriented programming** is a paradigm that enables you to take a results-focused approach
+to your app's architecture and design, giving you control over your application development
+processes and expected results ✨.
 
-Dive into **Result-Oriented Programming** with **Ruqe**, ensuring your app remains `responsive and reliable`.
+**Ruqe** provides convenient types and methods such as the `Result`, `Option`, `Either`,
+`Pattern Matching`, etc. Additionally, the library provides an excellent `techniques for handling
+errors gracefully without resorting to exceptions`.
 
-**Note:** `The size of the library is 22KB. It's light weight, isn't it?`
+Dive into **Result-Oriented Programming** with **Ruqe**, ensuring your app remains
+`responsive and reliable` 🚀.
+
+**Note:** `The size of the library is 22KB. It's light weight, isn't it?` 😍
 
 ## Getting started
 
@@ -23,7 +25,7 @@ In your Dart/Flutter project, add the dependency to your `pubspec.yaml`
 
 ```yaml
 dependencies:
-  ruqe: ^1.3.3
+  ruqe: ^1.4.0
 ```
 
 import with
@@ -40,7 +42,9 @@ In **Ruqe**, there is a clear distinction between recoverable and unrecoverable 
 
 ### 1. Recoverable errors:
 
-Recoverable errors do not cause a program to terminate completely. **Ruqe** makes unrecoverable error recoverable by matching the returned value of type `Result` and `Option` with the `.match<T>` convenient method.
+Recoverable errors do not cause a program to terminate completely. **Ruqe** makes unrecoverable
+error recoverable by matching the returned value of type `Result` and `Option` with the `.match<T>`
+convenient method.
 
 ```dart
 
@@ -72,7 +76,8 @@ Result<int, String> stringToNum(String str) {
 
 ### 2. Unrecoverable errors:
 
-Unrecoverable errors cause a program to terminate immediately. In **Ruqe**, [Panic] terminates the program when it comes across with an unrecoverable error.
+Unrecoverable errors cause a program to terminate immediately. In **Ruqe**, [Panic] terminates the
+program when it comes across with an unrecoverable error.
 
 `What can trigger a panic?`
 
@@ -105,12 +110,13 @@ Result<List<String?>, AppError> getFirstName(ListMap data) {
 }
 ```
 
-### 3. Option instance pattern matching: 
+### 3. Option instance pattern matching:
 
 This `match` method allows developers to perform pattern matching operations on
 Option instances, simplifying conditional logic and enhancing code readability.
 
 ```dart
+
 final Option<String> asData = None();
 
 final data = asData.match(
