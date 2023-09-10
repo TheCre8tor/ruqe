@@ -130,7 +130,7 @@ We will begin by firstly defining our data models:
                       ok: (value) => Text(value?.name ?? ""),
                       err: (_) => const SizedBox.shrink(),
                     );
-                },
+                }, 
             );
         }
     }
