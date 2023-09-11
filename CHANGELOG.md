@@ -1,3 +1,7 @@
+## [1.3.5] - 2023-09-10
+
+- Formatted the Option code file
+
 ## [1.3.4] - 2023-09-10
 
 - Added the panic API
