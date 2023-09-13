@@ -8,19 +8,26 @@ void main() {
   /// With pattern matching, we were able to recover from the
   /// exception thrown from calling [int.parse()] and return
   /// 0 instead.
-  var result = trigger.match<int?>(
+  var match = trigger.match<int?>(
     ok: (value) => value,
     err: (_) => 0,
   );
 
-  print("Result: $result"); // Result: 0
+  print("Result: $match"); // Result: 0
 
   /// Optional pattern matching
-  final Option<String> asData = None();
+  final Option<String> option = None();
+  final data =
+      option.match<String?>(some: (value) => value, none: () => "empty data");
 
-  final data = asData.match(some: (value) => value, none: () => "null");
+  print("Option value: $data");
 
-  print("Match Result: $data");
+  /// Result pattern matching
+  final Result<int, String> result = Err("24");
+  final value = result.match<int?>(
+      ok: (value) => value, err: (value) => int.tryParse(value ?? ""));
+
+  print("Result value: $value");
 }
 
 Result<int, String> stringToNum(String str) {

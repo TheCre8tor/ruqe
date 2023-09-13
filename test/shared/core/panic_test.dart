@@ -6,7 +6,7 @@ void main() {
 
   group("Panic:", () {
     test("$slice `Some` type when .toString() is called on the result", () {
-      var actual = Panic("emergency failure");
+      var actual = Panic(message: "emergency failure");
 
       expect(actual.message, "emergency failure");
     });

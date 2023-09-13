@@ -25,7 +25,7 @@ In your Dart/Flutter project, add the dependency to your `pubspec.yaml`
 
 ```yaml
 dependencies:
-  ruqe: ^1.3.5
+  ruqe: ^1.3.6
 ```
 
 import with

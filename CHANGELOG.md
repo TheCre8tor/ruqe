@@ -1,3 +1,7 @@
+## [1.3.6] - 2023-09-13
+
+- Enabled static check for `Result and Option` match api
+
 ## [1.3.5] - 2023-09-10
 
 - Formatted the Option code file

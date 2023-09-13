@@ -33,13 +33,13 @@ class Some<T> extends Option<T> {
 
   @override
   R match<R>({required SomeArm<R, T?> some, required NoneArm<R> none}) {
-    final someArm = some(_value);
-    final noneArm = none();
-
-    if (someArm.runtimeType != noneArm.runtimeType) {
-      throw ArgumentError(
-          "Return types from the [some] and [none] arm must be the same \n [issue]: ${someArm.runtimeType} is not the same as ${noneArm.runtimeType}");
-    }
+    // final someArm = some(_value);
+    // final noneArm = none();
+    //
+    // if (someArm.runtimeType != noneArm.runtimeType) {
+    //   throw ArgumentError(
+    //       "Return types from the [some] and [none] arm must be the same \n [issue]: ${someArm.runtimeType} is not the same as ${noneArm.runtimeType}");
+    // }
 
     return some(_value);
   }
@@ -71,14 +71,14 @@ class None<T> extends Option<T> {
   List<Object?> get props => [];
 
   @override
-  R match<R>({required SomeArm<R, T?> some, required NoneArm<R> none}) {
-    final someArm = some(null);
-    final noneArm = none();
-
-    if (someArm.runtimeType != noneArm.runtimeType) {
-      throw ArgumentError(
-          "Return types from the [some] and [none] arm must be the same \n [issue]: ${someArm.runtimeType} is not the same as ${noneArm.runtimeType}");
-    }
+  R match<R>({required SomeArm<R, T> some, required NoneArm<R> none}) {
+    // final someArm = some(null);
+    // final noneArm = none();
+    //
+    // if (someArm.runtimeType != noneArm.runtimeType) {
+    //   throw ArgumentError(
+    //       "Return types from the [some] and [none] arm must be the same \n [issue]: ${someArm.runtimeType} is not the same as ${noneArm.runtimeType}");
+    // }
 
     return none();
   }

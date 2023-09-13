@@ -8,13 +8,13 @@ part of "package:ruqe/ruqe.dart";
 /// - thrown when unwrapping an [Option] that is [None].
 ///
 /// ```dart
-/// throw Panic("panic with `${super._error}`");
+/// throw Panic(message: "panic with `${super._error}`");
 /// ```
 /// {@template}
 class Panic extends Equatable implements Exception {
-  final String? message;
+  final String message;
 
-  const Panic(String this.message);
+  const Panic({required this.message});
 
   @override
   List<Object?> get props => [message];
