@@ -17,15 +17,21 @@ void main() {
 
   /// Optional pattern matching
   final Option<String> option = None();
-  final data =
-      option.match<String?>(some: (value) => value, none: () => "empty data");
+
+  final data = option.match<String?>(
+    some: (value) => value,
+    none: () => "empty data",
+  );
 
   print("Option value: $data");
 
   /// Result pattern matching
   final Result<int, String> result = Err("24");
+
   final value = result.match<int?>(
-      ok: (value) => value, err: (value) => int.tryParse(value ?? ""));
+    ok: (value) => value,
+    err: (value) => int.tryParse(value ?? ""),
+  );
 
   print("Result value: $value");
 }
